@@ -9,12 +9,14 @@ class Appointment extends Model
 {
     protected $fillable = [
         'id',
-        'date',
+        'time_id',
         'company',
         'contacts',
-        'ticketType',
-        'countSI',
-        'accountNumber'
+        'ticket_type_id',
+        'count_si',
+        'account_numbers',
+        'updated_at',
+        'created_at'
     ];
     public $primaryKey = 'id';
     public $timestamps = false;

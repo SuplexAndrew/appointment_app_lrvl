@@ -6,23 +6,17 @@ use Illuminate\Support\Facades\Schema;
 
 class AddTicketType extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
     public function up()
     {
-        //
+        Schema::create('ticket_types', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('name')->nullable(false);
+            $table->timestamp('updated_at')->nullable(false)->useCurrent();
+            $table->timestamp('created_at')->nullable(false)->useCurrent();
+        });
     }
-
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
     public function down()
     {
-        //
+        Schema::drop('ticket_types');
     }
 }

@@ -6,13 +6,12 @@ use Illuminate\Database\Seeder;
 
 class AppointmentsSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     *
-     * @return void
-     */
     public function run()
     {
-        //
+        $size = rand(30, 44);
+        while ($size > 0) {
+            \App\Models\Appointment::factory()->create();
+            $size--;
+        }
     }
 }
